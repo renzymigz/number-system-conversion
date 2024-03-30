@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Conversion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="images/icon.png">
+    <script src="https://kit.fontawesome.com/44adcb7278.js" crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <audio id="invalidSound" src="audio/error.mp3"></audio>
+    <audio id="successfulSound" src="audio/successful.mp3"></audio>
+    <audio id="hoverSound" src="audio/hover.mp3"></audio>
+    <audio id="restartSound" src="audio/restart.mp3"></audio>
+    
+    <header>
+        <div class="text-header">
+            <h1>NUMBER CONVERSION SYSTEM  <div class="menu">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div></h1> 
+        </div>
+    </header>
+
+    <div class="navbar">
+        <ul id="menuList">
+            <li><a href="menu.html">Home</a></li>
+            <li><a href="binaryConversion.html">Binary Conversion</a></li>
+            <li><a href="octalConversion.html">Octal Conversion</a></li>
+            <li><a href="decimalConversion.html" class="active">Decimal Conversion</a></li>
+            <li><a href="hexadecimalConversion.html">Hexadecimal Conversion</a></li>
+        </ul>
+    </div>
+
+    <div class="accessories">
+        <div class="icons">
+            <h1 id="uno2"><span class="blink">1</span>9</h1>
+            <h1 id="zewo2">9<span class="blink">1</span></h1>
+        </div>
+    </div>
+
+    <div class="container2" id="container2">
+            <div class="converter-title">DECIMAL CONVERSION</div>
+                <div class="tools">
+                    <div class="circle">
+                        <a href="menu.html"><span class="red box"></span></a> 
+                    </div>
+
+                    <div class="circle">
+                        <span class="yellow box"></span>
+                    </div>
+
+                    <div class="circle">
+                        <span class="green box"></span>
+                    </div>
+                    
+                </div>
+
+                <form>
+                    <div class="inputter">
+                        <input id="inputNumber" placeholder="ENTER NUMBER" onkeydown="noSpaces(event)">
+                    </div>
+                </form>
+                <hr>
+                <button class="conversion-buttons" onclick="decToBinary()">TO BINARY</button>
+                <button class="conversion-buttons" onclick="decToOctal()">TO OCTAL</button>
+                <button class="conversion-buttons" onclick="decToHexa()">TO HEXADECIMAL</button>
+                <button id="clearButton" onclick="resetInput()"><i class="fa-solid fa-rotate-right fa-flip-horizontal"></i></button>
+                <hr>
+
+                <div class="output">
+                    <p class="answer" id="answer">ANSWER WILL APPEAR HERE</p>
+                </div>
+    </div>
+
+    <footer id="foot">
+        <div class="footer-wrapper">
+            <h2>@RENZYMIGZ - G1 BSIT</h2>
+            <p>© Florence Azriel R. Migallos</p>  
+        </div>
+        <div class="social-media-icons">
+            <a href="https://github.com/renzymigz" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

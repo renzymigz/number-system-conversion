@@ -1,0 +1,379 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:"Poppins", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*------------------- ANIMATION AND STUFF --------------------*/
+@keyframes blink{
+    0%, 49% {opacity: 1;}
+    50%, 100% {opacity: 0;}
+}
+.blink {
+    animation: blink 1.2s infinite;
+    z-index: -5;
+}
+
+a{
+    text-decoration: none;
+}
+
+@keyframes popupcontainer {
+    0% { transform: scale(0) translate(-50%, -50%); }
+    50% { transform: scale(1.1) translate(-50%, -50%);  }
+    100% { transform: scale(1) translate(-50%, -50%); }
+  }
+  
+
+@keyframes popupuno {
+    0% { transform: scale(0) translate(-300%, -140%) rotate(-4deg); }
+    50% { transform: scale(1.1) translate(-300%, -140%) rotate(-4deg); }
+    100% { transform: scale(1) translate(-300%, -140%) rotate(-4deg); }
+  }
+
+
+@keyframes popupzewo {
+    0% { transform: scale(0) translate(185%, 60%) rotate(6deg); }
+    50% { transform: scale(1.1) translate(185%, 60%) rotate(6deg); }
+    100% { transform: scale(1) translate(185%, 60%) rotate(6deg);}
+  }
+
+  #menuList{
+    transition: all 0.5s;
+  }
+  
+  @keyframes slideBackground {
+    0% {
+      background-position: 0 0; 
+    }
+    100% {
+      background-position: 100% 100%; 
+    }
+  }
+  
+
+/*--------------------- HEADER ------------ */
+
+body {
+    background-image: url(images/background.png);
+    background-repeat: repeat;
+    background-size: 20em;
+    background-attachment: fixed;
+    animation: slideBackground 90s linear infinite;
+}
+
+header {
+    background-color: white;
+    position: relative; 
+    
+}
+
+.text-header{
+    text-align: center;
+    letter-spacing: 4px;
+    position: relative;
+}
+
+.navbar {
+    position: relative;
+    box-shadow: 0 3px 0 rgb(183, 183, 183), 0 10px 20px rgba(103, 103, 103, 0.5);
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(230, 230, 230);
+    z-index: 99999;
+    
+}
+
+.navbar ul{
+    list-style-type:none;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    font-size: 0.8em;
+    gap: 30px
+   
+}
+
+
+.navbar ul li{
+    list-style-type: none;
+}
+
+.navbar ul li a{
+  
+    color:rgb(0, 0, 0);
+}
+
+.navbar a{
+  
+    padding: 15px;
+    display: block;
+}
+
+.navbar a:hover{
+    background-color: rgb(183, 183, 183);
+    color: black;
+}
+
+.active{
+    background-color: rgb(187, 187, 187);
+}
+
+.menu{
+    display: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.menu i{
+    font-size:25px;
+    transition: transform 0.09s ease-in-out;
+}
+
+.menu i:hover{
+    transform: scale(1.15) rotate(-3deg);
+}
+
+
+
+.icons{
+    font-size: 3em;
+    color: rgb(184, 184, 184);
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: rgb(135, 135, 135);
+    opacity: 0.8;
+    text-shadow: 0px 0px 5px black;
+    z-index: -5;
+}
+
+
+#tagLine{
+    position: absolute;
+    bottom: 90px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center;
+    font-size: 13px;
+    color: rgb(93, 93, 93);
+    font-style: italic;
+    animation: floatingText 2s infinite;
+}
+
+@keyframes floatingText {
+    0% { transform:translate(-75px, 0px); }
+    50% { transform: translate(-75px, 33px); }
+    100% { transform: translate(-75px, 0px);}
+}
+
+/* ---------------------------- MAIN AREA ------------------------- */
+.allContainer{
+    display: none;
+}
+
+#uno{
+    top: 50%;
+    left: 50%;
+    transform: translate(-300%, -140%) rotate(-4deg);
+    position: absolute;
+    z-index: -5;
+    user-select: none;
+    animation: popupuno 0.4s ease;
+}
+
+#zewo{
+    top: 50%;
+    left: 50%;
+    transform: translate(185%, 60%) rotate(6deg);
+    position: absolute;
+    z-index: -5;
+    user-select: none;
+    animation: popupzewo 0.4s ease;
+}
+
+
+.container{
+    width: 500px;
+    height: 295px;
+    background-color: rgb(240, 240, 240);
+    border: solid rgb(173, 173, 173) 2px;
+    border-radius: 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: -1;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset, rgba(0, 0, 0, 0.1) 0px 14px 28px, rgba(0, 0, 0, 0.10) 0px 10px 10px;
+    animation: popupcontainer 0.4s ease;
+}
+.tools {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 9px;
+    transform: translate(510%, -98%);
+}
+
+.circle:hover{
+    transform: scale(1.125);
+    filter: drop-shadow(0 0 2px rgb(144, 144, 144))
+}
+.circle {
+    padding: 0 4px;
+}
+
+.circle .box {
+    display: block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+}
+
+.red {
+    background-color: #ff605c;
+}
+
+.yellow {
+    background-color: #ffbd44;
+}
+
+.green {
+    background-color: #00ca4e;
+}
+
+.converter-title{
+    background-color: rgb(222, 222, 222);
+    text-align: center;
+    border-bottom: rgb(173, 173, 173) solid 2px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: inset -26px -26px 52px #c7c7c7,
+                inset 26px 26px 52px #ffffff;
+ 
+}
+
+
+button {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 25px;
+    transition: transform 0.1s ease-in-out;
+    border: none;
+    color: white;
+    background-color: #387be7;
+    display: flex;
+    width: 450px;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
+                rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset;
+}
+
+button:hover{
+    transform: scale(1.05);
+    
+    font-weight: bold;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset,
+                rgba(0, 0, 0, 0.2) 0px -50px 36px -28px inset,
+    rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+button:active{
+    background-color: #2560bf;
+}
+
+
+
+/* ------------------------------ FOOTER  ------------------------------ */
+footer {
+    position: fixed;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    display: block;
+    color: rgb(0, 0, 0);
+    padding: 2px;
+    background-color: rgb(230, 230, 230);
+    box-shadow: 0px 0px 10px rgb(106, 106, 106);
+    font-size: 13px;
+    text-align: center;
+}
+
+.footer-wrapper h2{
+    padding-left: 10px;
+   
+}
+.footer-wrapper{
+    padding: 10px;
+}
+
+.footer-wrapper p{
+    padding-left: 10px;
+}
+
+.social-media-icons{
+    float: right;
+}
+
+.social-media-icons i{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: transform 0.1s ease-in-out;
+    color: rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 20px;
+    border: rgb(173, 173, 173) solid 1px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.social-media-icons i:hover{
+    transform: scale(1.25);
+}
+
+
+  /* --------------------- RESPONSIVE MEDIA SCREEN ------------------ */
+
+  @media only screen and (max-width: 840px) {
+    .navbar ul {
+        position: relative;
+        flex-direction: column;
+        text-align: center;
+        max-height: 0;
+        overflow: hidden;
+        gap: 0;
+        opacity: 0;
+        background-color: rgb(230, 230, 230);
+        transition: max-height 0.5s ease, opacity 0.5s ease-in-out;
+        
+    }
+
+    .navbar.active ul{
+        max-height: 300px;
+        opacity: 1;
+    }
+
+    .navbar ul li {
+        padding-top: 0;
+    }
+
+    .menu {
+        display: block;
+        float: right;
+        justify-content: flex-end;
+    }
+    
+   
+      
+}

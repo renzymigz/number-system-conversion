@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Conversion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="icon" href="images/icon.png">
+    <script src="https://kit.fontawesome.com/44adcb7278.js" crossorigin="anonymous"></script>
+   
+</head>
+
+<body>
+    <audio id="hoverSound" src="audio/hover.mp3"></audio>
+
+    <header>
+        <div class="text-header">
+            <h1>NUMBER CONVERSION SYSTEM  <div class="menu">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div></h1> 
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul id="menuList">
+            <li><a href="menu.html" class="active">Home</a></li>
+            <li><a href="binaryConversion.html">Binary Conversion</a></li>
+            <li><a href="octalConversion.html">Octal Conversion</a></li>
+            <li><a href="decimalConversion.html">Decimal Conversion</a></li>
+            <li><a href="hexadecimalConversion.html">Hexadecimal Conversion</a></li>
+        </ul>
+    </nav>
+    
+
+    <div class="accessories" id="accessories">
+        <div class="icons">
+            <h1 id="uno"><span class="blink">1</span>0</h1>
+            <h1 id="zewo">0<span class="blink">1</span></h1>
+        </div>
+    </div>
+    
+    <div class="container" id="container">
+            <div class="converter-title">CONVERTER MENU
+                <div class="tools">
+                    <div class="circle">
+                        <span class="red box"></span>
+                    </div>
+
+                    <div class="circle">
+                        <span class="yellow box"></span>
+                    </div>
+
+                    <div class="circle">
+                        <span class="green box"></span>
+                    </div>
+                    
+                </div>
+            </div>
+                <a href="binaryConversion.html">
+                    <button class="conversion-buttons" onmouseover="playHoverSound()">CONVERT BINARY</button>
+                </a>
+
+                <a href="octalConversion.html">
+                    <button class="conversion-buttons" onmouseover="playHoverSound()">CONVERT OCTAL</button>
+                </a>
+
+                <a href="decimalConversion.html">
+                    <button class="conversion-buttons" onmouseover="playHoverSound()">CONVERT DECIMAL</button>
+                </a>
+
+                <a href="hexadecimalConversion.html">
+                    <button class="conversion-buttons" onmouseover="playHoverSound()">CONVERT HEXADECIMAL</button>
+                </a>
+    </div>
+
+    <div id="tagLine">
+        <p>may chance po ba ako?</p>
+    </div>
+    
+    <footer id="foot">
+        <div class="footer-wrapper">
+            <h2>Midterm Project for CS 132 - G1 BSIT</h2>
+            <p>© Florence Azriel R. Migallos</p>  
+        </div>
+        <div class="social-media-icons">
+            <a href="https://github.com/renzymigz" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </footer>
+
+
+    
+    <script src="scripts.js"></script>
+</body>
+</html>
