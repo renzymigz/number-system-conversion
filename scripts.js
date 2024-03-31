@@ -96,6 +96,8 @@ function binaryToDec() {
 
     // GROUPED SPACES
 
+    integerPart = String(integerPart);
+
     while (integerPart.length % 4 !== 0) {
         integerPart = "0" + integerPart;
     }
@@ -111,7 +113,7 @@ function binaryToDec() {
     let formattedBinary = integerPart.replace(/(\d{4})(?=\d)/g, "$1 ") + fractionalPart.replace(/(\d{4})(?=\d)/g, "$1 ");
 
     let decimalResult = decimalInteger + decimalFractional;
-
+    
     if (parseInt(inputNumber, 2) < 0){
         decimalResult = "-" + decimalResult;
     }
@@ -158,6 +160,8 @@ function binaryToOctal() {
             return;
         }
     }
+
+    integerPart = String(integerPart);
 
     while (integerPart.length % 4 !== 0) {
         integerPart = "0" + integerPart;
@@ -223,8 +227,8 @@ function binaryToHexa() {
         }
     }
 
-   
-
+    integerPart = String(integerPart);
+    
     while (integerPart.length % 4 !== 0) {
         integerPart = "0" + integerPart;
     }
@@ -389,6 +393,12 @@ function decToBinary() {
     let binaryInteger, binaryFractional = "";
 
     let [integerPart, fractionalPart] = inputNumber.includes('.') ? inputNumber.split('.') : [inputNumber, ""];
+    
+    if (!inputNumber) {
+        displayResult("PLEASE ENTER A NUMBER", "red");
+        playInvalidSound();  
+        return;
+    }
     
     if (isValidInput(integerPart, 10)) {
         binaryInteger = Math.abs(parseInt(integerPart, 10)).toString(2);
