@@ -61,8 +61,6 @@ function binaryToDec() {
     // Split into integer & fractional parts
 
     let [integerPart, fractionalPart] = inputNumber.includes('.') ? inputNumber.split('.') : [inputNumber, ""];
-
-    integerPart = Math.abs(integerPart);
     
     // if (parseInt(inputNumber, 2) < 0) {                      // IF DIMO ACCEPT NEGATIVE NUMBER
     //     displayResult("INVALID BINARY NUMBER", "red");
@@ -96,29 +94,10 @@ function binaryToDec() {
 
     // GROUPED SPACES
 
-    integerPart = String(integerPart);
-
-    while (integerPart.length % 4 !== 0) {
-        integerPart = "0" + integerPart;
-    }
-    
-    if (fractionalPart !== ""){
-        fractionalPart = "." + fractionalPart;
-    }
-
-    if (parseInt(inputNumber) < 0){
-        integerPart = "-" + integerPart;
-    }
-
-    let formattedBinary = integerPart.replace(/(\d{4})(?=\d)/g, "$1 ") + fractionalPart.replace(/(\d{4})(?=\d)/g, "$1 ");
 
     let decimalResult = decimalInteger + decimalFractional;
-    
-    if (parseInt(inputNumber, 2) < 0){
-        decimalResult = "-" + decimalResult;
-    }
 
-    displayResult("(" + formattedBinary + ")" +  subscriptBinary + " = " + "(" + decimalResult + ")" + subscriptDec, "black");
+    displayResult("(" + inputNumber + ")" +  subscriptBinary + " = " + "(" + decimalResult + ")" + subscriptDec, "black");
     playSuccessfulSound();
 }
 
@@ -135,7 +114,6 @@ function binaryToOctal() {
 
     let [integerPart, fractionalPart] = inputNumber.includes('.') ? inputNumber.split('.') : [inputNumber, ""];
 
-    integerPart = Math.abs(integerPart);
     
     if (isValidInput(integerPart, 2)) {
         octalInteger = parseInt(integerPart, 2).toString(8);
@@ -161,29 +139,10 @@ function binaryToOctal() {
         }
     }
 
-    integerPart = String(integerPart);
-
-    while (integerPart.length % 4 !== 0) {
-        integerPart = "0" + integerPart;
-    }
-    
-    if (fractionalPart !== ""){
-        fractionalPart = "." + fractionalPart;
-    }
-
-    if (parseInt(inputNumber) < 0){
-        integerPart = "-" + integerPart;
-    }
-
-    let formattedBinary = integerPart.replace(/(\d{4})(?=\d)/g, "$1 ") + fractionalPart.replace(/(\d{4})(?=\d)/g, "$1 ");
 
     let octalResult = octalInteger + octalFractional;
-
-    if (parseInt(inputNumber) < 0){
-        octalResult = "-" + octalResult;
-    }
     
-    displayResult("(" + formattedBinary + ")" +  subscriptBinary + " = " + "(" + octalResult + ")" + subscriptOctal, "black");
+    displayResult("(" + inputNumber + ")" +  subscriptBinary + " = " + "(" + octalResult + ")" + subscriptOctal, "black");
     playSuccessfulSound();
 }
 
@@ -200,8 +159,7 @@ function binaryToHexa() {
     let hexadecimalInteger, hexadecimalFractional = "";
 
     let [integerPart, fractionalPart] = inputNumber.includes('.') ? inputNumber.split('.') : [inputNumber, ""];
-    
-    integerPart = Math.abs(integerPart);
+
 
     // Convert integer part to decimal
     if (isValidInput(integerPart, 2)) {
@@ -227,29 +185,9 @@ function binaryToHexa() {
         }
     }
 
-    integerPart = String(integerPart);
-    
-    while (integerPart.length % 4 !== 0) {
-        integerPart = "0" + integerPart;
-    }
-    
-    if (fractionalPart !== ""){
-        fractionalPart = "." + fractionalPart;
-    }
-
-    if (parseInt(inputNumber) < 0){
-        integerPart = "-" + integerPart;
-    }
-
-    let formattedBinary = integerPart.replace(/(\d{4})(?=\d)/g, "$1 ") + fractionalPart.replace(/(\d{4})(?=\d)/g, "$1 ");
-
     let hexadecimalResult = hexadecimalInteger + hexadecimalFractional;
 
-    if (parseInt(inputNumber) < 0){
-        hexadecimalResult = "-" + hexadecimalResult;
-    }
-
-    displayResult("(" + formattedBinary + ")" + subscriptBinary + " = " + "(" + hexadecimalResult + ")" + subscriptHexa, "black");
+    displayResult("(" + inputNumber + ")" + subscriptBinary + " = " + "(" + hexadecimalResult + ")" + subscriptHexa, "black");
     playSuccessfulSound();
 }
 
@@ -289,16 +227,12 @@ function octalToBinary() {
             return;
         }
     }
- 
-    while (binaryInteger.length % 4 !== 0) {
-        binaryInteger = "0" + binaryInteger;
-    }
     
     if (parseInt(inputNumber) < 0 ){
         binaryInteger = "-" + binaryInteger;
     }
 
-    let binaryResult = binaryInteger.replace(/(\d{4})(?=\d)/g, "$1 ") + binaryFractional.replace(/(\d{4})(?=\d)/g, "$1 ");
+    let binaryResult = binaryInteger+ binaryFractional;
     
     displayResult("(" + inputNumber + ")" +  subscriptOctal + " = " + "(" + binaryResult + ")" + subscriptBinary, "black");
     playSuccessfulSound();
@@ -418,15 +352,11 @@ function decToBinary() {
         }
     }
     
-    while (binaryInteger.length % 4 !== 0) {
-        binaryInteger = "0" + binaryInteger;
-    }
-    
     if (parseInt(inputNumber) < 0 ){
         binaryInteger = "-" + binaryInteger;
     }
     
-    let binaryResult = binaryInteger.replace(/(\d{4})(?=\d)/g, "$1 ") + binaryFractional.replace(/(\d{4})(?=\d)/g, "$1 ");
+    let binaryResult = binaryInteger+ binaryFractional;
     
     displayResult("(" + inputNumber + ")" +  subscriptDec + " = " + "(" + binaryResult + ")" + subscriptBinary, "black");
     playSuccessfulSound();
@@ -515,14 +445,11 @@ function hexaToBinary() {
         fractionalPart = "." + fractionalPart;
     }
 
-    while (binaryInteger.length % 4 !== 0) {
-        binaryInteger = "0" + binaryInteger;
-    }
     if (parseInt(inputNumber, 16) < 0){
         binaryInteger = "-" + binaryInteger;
     }
 
-    let binaryResult = binaryInteger.replace(/(\d{4})(?=\d)/g, "$1 ") + binaryFractional.replace(/(\d{4})(?=\d)/g, "$1 ");
+    let binaryResult = binaryInteger+ binaryFractional;
     
     displayResult("(" + inputNumber.toUpperCase() + ")" +  subscriptHexa + " = " + "(" + binaryResult + ")" + subscriptBinary, "black");
     playSuccessfulSound();
